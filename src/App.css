@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+ol {
+  list-style-type: decimal;
+  margin-left: 100px;
+}
 
 .App-logo {
   height: 40vmin;
