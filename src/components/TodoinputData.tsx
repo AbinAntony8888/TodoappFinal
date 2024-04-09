@@ -25,9 +25,9 @@ export default function TodoinputData({
     }
   };
   return (
-    <div>
+    <div className=" flex items-center text-black pb-3">
       <br />
-      <form action="" className="pb-10" onSubmit={handleSubmit}>
+      <form action="" className="flex flex-row" onSubmit={handleSubmit}>
         <input
           placeholder="Enter Your Task.."
           type="text"

@@ -17,13 +17,13 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
 
   return (
     <div>
-      <ol className="ol-list">
+      <ol className="flex flex-col gap-y-2">
         {todoList.map((item: string, index: number) => (
-          <li key={index}>
+          <li key={index} className="flex flex-row ">
             <input
               type="text"
               value={item}
-              className="bg-[#d4e885]  border-2 border-black p-1"
+              className="bg-[#d4e885]  border-2 border-black p-1 text-amber-950"
             />
             {/* <button
               onClick={() => deleteItem(index)}
