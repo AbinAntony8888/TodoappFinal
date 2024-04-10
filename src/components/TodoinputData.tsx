@@ -25,7 +25,7 @@ export default function TodoinputData({
     }
   };
   return (
-    <div className=" flex items-center text-black pb-3">
+    <div className=" flex items-center text-black pb-3 ">
       <br />
       <form action="" className="flex flex-row" onSubmit={handleSubmit}>
         <input
@@ -35,7 +35,7 @@ export default function TodoinputData({
           value={inputTodo}
           className="border-2 border-black p-1"
         />
-        <TodoButton value={"add"} colour={"bg-[#2EC40C]"} />
+        <TodoButton value={" add"} colour={"bg-[#237a3c]"} />
         {/* <button
           className="bg-green-600 ml-6 p-1 text-white font-medium">
           Add item
