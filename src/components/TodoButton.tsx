@@ -12,7 +12,7 @@ export default function TodoButton({
   return (
     <div>
       <button
-        className={` p-1  ml-6 ${colour} text-white font-medium`}
+        className={` p-1  ml-6 ${colour} text-white font-medium ring-1 ring-black`}
         onClick={buttonClick}
       >
         {value}

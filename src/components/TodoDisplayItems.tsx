@@ -14,16 +14,22 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
   const clearAll = () => {
     setTodoList([]);
   };
+  const editItem=(event:number)=>{
+    const editTodoArray = [...todoList];
+    
+    
+  }
 
   return (
     <div>
-      <ol className="ol-list">
+      <ol className="flex flex-col gap-y-2 items-end">
         {todoList.map((item: string, index: number) => (
-          <li key={index}>
+          <li  className="flex flex-row ">
+            {/* <h1 className="text-black pr-2">{index+1}.</h1> */}
             <input
               type="text"
               value={item}
-              className="bg-[#d4e885]  border-2 border-black p-1"
+              className="bg-teal-100  border-2 border-black p-1 text-amber-950"
             />
             {/* <button
               onClick={() => deleteItem(index)}
@@ -37,7 +43,7 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
               colour={"bg-[red]"}
               buttonClick={() => deleteItem(index)}
             />
-            <TodoButton value={"Edit"} colour={"bg-[#6AB20D]"} />
+            <TodoButton value={"Edit"} colour={"bg-[#6AB20D]" } buttonClick={()=>editItem(index)} />
           </li>
         ))}
         {/* <button
@@ -46,9 +52,9 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
         >
           Clear All
         </button> */}
-        <TodoButton
+        <TodoButton 
           value={"clear all"}
-          colour={"bg-[#977ACF]"}
+          colour={"bg-[#cb3333]"}
           buttonClick={clearAll}
         />
       </ol>
