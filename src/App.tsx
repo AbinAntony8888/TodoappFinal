@@ -9,7 +9,7 @@ function App() {
   const [todoListArray, setTodoListArray] = useState<string[]>([]);
   return (
     <div className="flex flex-col items-center justify-start gap-y-5 h-screen text-white m-2 bg-gradient-to-r from-slate-300 to-slate-500">
-      <h1 className="text-3xl font-bold text-center  underline text-black">Todo List</h1>
+      <h1 className="text-3xl font-bold text-center  underline decoration-red-500 text-black">Todo List</h1>
       <div className="">
         <div className="flex flex-col justify-start items-start w-full">
           <div className="">
