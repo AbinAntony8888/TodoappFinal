@@ -28,12 +28,12 @@ export default function TodoinputData({
     <div className=" flex items-center text-black pb-3 ">
       <br />
       <form action="" className="flex flex-row" onSubmit={handleSubmit}>
-        <input
+        <input 
           placeholder="Enter Your Task.."
           type="text"
           onChange={handleChange}
           value={inputTodo}
-          className="border-2 border-black p-1"
+          className="border-2 border-white p-1 bg-gradient-to-r from-slate-300 to-slate-500 placeholder-green-900"
         />
         <TodoButton value={" add"} colour={"bg-[#237a3c]"} />
         {/* <button

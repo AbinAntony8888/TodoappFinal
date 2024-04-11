@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TodoButton from "./TodoButton";
 
 type todoType = {
@@ -14,45 +15,46 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
   const clearAll = () => {
     setTodoList([]);
   };
-  const editItem=(event:number)=>{
-    const editTodoArray = [...todoList];
-    
-    
-  }
+  
+  const editItem = (index: number,item:string) => {
+    const newTodo = [...todoList];
+    newTodo[index]=item;
+    // newTodo[index]
+    newTodo[index] = prompt('Enter the new task:', todoList[index]) || todoList[index];
+    console.log(newTodo[index]);
+    setTodoList(newTodo);
+  };
 
   return (
     <div>
-      <ol className="flex flex-col gap-y-2 items-end">
+      <ol className="flex flex-col gap-y-1 items-end  ">
         {todoList.map((item: string, index: number) => (
-          <li  className="flex flex-row ">
-            {/* <h1 className="text-black pr-2">{index+1}.</h1> */}
-            <input
+          <li key={index} className="flex flex-row bg-gradient-to-r from-pink-500 to-violet-600">
+            <div className="font-bold w-8 text-m">
+              <h1 className="text-black pr-2">{index + 1}.</h1>
+            </div>
+            <input 
               type="text"
               value={item}
-              className="bg-teal-100  border-2 border-black p-1 text-amber-950"
+              id="inputdisplay"
+              // onChange={(e) => editItem(index, e.target.value)}
+              className=" p-1 text-white font-bold text-lg bg-gradient-to-r from-pink-500 to-violet-600"
             />
-            {/* <button
-              onClick={() => deleteItem(index)}
-              className="bg-[red] p-1 m-1"
-            >
-              Delete
-            </button> */}
-            {/* <button className="bg-[#38f351] p-1 m-1 px-4">Edit</button> */}
+
+            <TodoButton
+              value={ "Edit"}
+              colour={"bg-[]"}
+              buttonClick={() => editItem(index,item)}
+            />
+    
             <TodoButton
               value={"Delete"}
-              colour={"bg-[red]"}
+              colour={"bg-[]"}
               buttonClick={() => deleteItem(index)}
             />
-            <TodoButton value={"Edit"} colour={"bg-[#6AB20D]" } buttonClick={()=>editItem(index)} />
           </li>
         ))}
-        {/* <button
-          onClick={clearAll}
-          className="bg-[#864747] p-1 m-1 px-4 text-white"
-        >
-          Clear All
-        </button> */}
-        <TodoButton 
+        <TodoButton
           value={"clear all"}
           colour={"bg-[#cb3333]"}
           buttonClick={clearAll}
