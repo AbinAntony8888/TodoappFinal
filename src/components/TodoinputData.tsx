@@ -33,7 +33,7 @@ export default function TodoinputData({
           type="text"
           onChange={handleChange}
           value={inputTodo}
-          className="border-2 border-black p-1 bg-gradient-to-r from-slate-300 to-slate-500 placeholder-green-900"
+          className="border-2 border-white p-1 bg-gradient-to-r from-slate-300 to-slate-500 placeholder-green-900"
         />
         <TodoButton value={" add"} colour={"bg-[#237a3c]"} />
         {/* <button

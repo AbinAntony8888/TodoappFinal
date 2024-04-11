@@ -29,7 +29,7 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
     <div>
       <ol className="flex flex-col gap-y-1 items-end  ">
         {todoList.map((item: string, index: number) => (
-          <li key={index} className="flex flex-row bg-red-400">
+          <li key={index} className="flex flex-row bg-gradient-to-r from-pink-500 to-violet-600">
             <div className="font-bold w-8 text-m">
               <h1 className="text-black pr-2">{index + 1}.</h1>
             </div>
@@ -38,18 +38,18 @@ export default function TodoDisplayItems({ todoList, setTodoList }: todoType) {
               value={item}
               id="inputdisplay"
               // onChange={(e) => editItem(index, e.target.value)}
-              className="bg-red-400 p-1 text-white font-bold text-lg"
+              className=" p-1 text-white font-bold text-lg bg-gradient-to-r from-pink-500 to-violet-600"
             />
 
             <TodoButton
               value={ "Edit"}
-              colour={"bg-[#6AB20D]"}
+              colour={"bg-[]"}
               buttonClick={() => editItem(index,item)}
             />
     
             <TodoButton
               value={"Delete"}
-              colour={"bg-[red]"}
+              colour={"bg-[]"}
               buttonClick={() => deleteItem(index)}
             />
           </li>
